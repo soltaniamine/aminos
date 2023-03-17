@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "lint": "^0.8.19",
+    "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -15,7 +17,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .ts,.tsx ./src",
+    "fix": "yarn format && yarn lint:fix",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx}'",
+    "fix:eslint": "eslint src --ext .js,.ts,.jsx,.tsx --fix",
+    "fix:prettier": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
